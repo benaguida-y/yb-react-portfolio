@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
 
     return (
-        <section id="home" className="flex items-center h-screen bg-gradient-to-r from-[#0f1720] to-[#1e293b] text-white px-4">
+        <section id="home" className="flex items-center h-screen bg-linear-to-r from-[#0f1720] to-[#1e293b] text-white px-4">
             {backgroundImage && (
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-20"

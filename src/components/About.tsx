@@ -41,7 +41,7 @@ const About = () => {
                             <Badge variant="secondary" className="bg-gray-200 text-sm">Effective Communication</Badge>
                             <Badge variant="secondary" className="bg-gray-200 text-sm">Critical Thinking</Badge>
                         </div>
-                        <Button className=" cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-sm" onClick={() => navigate("/about-detailed")}>
+                        <Button className=" cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-sm" onClick={() => navigate("/about-fr")}>
                             Find Out More
                             <FileUser />
                         </Button>

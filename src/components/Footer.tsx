@@ -7,13 +7,13 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="border-t-2 bg-gradient-to-r from-[#0f1720] to-[#1e293b] text-white pt-10 pb-4">
+        <footer className="border-t-2 bg-linear-to-r from-[#0f1720] to-[#1e293b] text-white pt-10 pb-4">
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                     {/* Brand */}
                     <div>
                         <div className="flex text-2xl font-bold text-white mb-8 gap-4 items-center">
-                            <div className="flex-shrink-0 flex items-center">
+                            <div className="shrink-0 flex items-center">
                                 <NavLink to="/">
                                     <img
                                         src={logo}

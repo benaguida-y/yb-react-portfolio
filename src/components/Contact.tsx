@@ -123,7 +123,7 @@ const Contact = () => {
                     </div>
 
                     {/* Contact Form */}
-                    <Card className="p-8 shadow-card border-2">
+                    <Card className="p-8 shadow-card ">
                         <CardContent className="p-0 ">
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="space-y-2">

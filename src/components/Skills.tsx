@@ -108,7 +108,7 @@ const Skills = () => {
                     {skillCategories.map((category, index) => {
                         const IconComponent = category.icon;
                         return (
-                            <Card key={index} className="p-6 shadow-card hover:shadow-[#0f1720] border-2 transition-shadow duration-300 group">
+                            <Card key={index} className="p-6 shadow-card hover:shadow-[#0f1720] transition-shadow duration-500 group">
                                 <CardContent className="p-0">
                                     <div className="flex items-center mb-4">
                                         <div className={`p-3  rounded-lg border mr-4 group-hover:scale-110 transition-transform`}>

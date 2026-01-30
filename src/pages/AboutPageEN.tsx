@@ -1,13 +1,23 @@
-import { Globe, Linkedin, Mail, MapPin, Phone, SquareArrowOutUpRight } from "lucide-react";
+import { ExternalLink, Globe, Linkedin, Mail, MapPin, Phone, SquareArrowOutUpRight } from "lucide-react";
 import logo from "../assets/logo.png";
 import {
     Accordion, AccordionContent, AccordionItem, AccordionTrigger
 } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
 
 
-const AboutPage = () => {
+const AboutPageEN = () => {
     return (
         <div className="bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat min-h-screen pt-26 pb-14">
+            <div className="flex justify-center items-center mb-4">
+                <NavLink to="/about-fr">
+                    <Button size="sm" className=" cursor-pointer text-black hover:text-white bg-white hover:bg-[#1e293b] hover:opacity-90 transition-opacity border">
+                        {/* <ExternalLink className="h-4 w-4 mr-2" /> */}
+                        CV - Français
+                    </Button>
+                </NavLink>
+            </div>
             <div className="flex bg-white shadow-2xl border border-black mx-auto  text-base leading-relaxed relative"
                 style={{
                     width: '210mm',
@@ -374,4 +384,4 @@ const AboutPage = () => {
     )
 }
 
-export default AboutPage
+export default AboutPageEN

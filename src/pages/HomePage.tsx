@@ -17,7 +17,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className=""> {/* Account for fixed navbar */}
+        <div> {/* Account for fixed navbar */}
             <Hero
                 title="YB Dev"
                 subtitle="Full-Stack Developer & UI/UX Designer creating beautiful, functional digital experiences"
@@ -28,7 +28,7 @@ const HomePage = () => {
             />
             <About />
             <Skills />
-            <Projects />
+            <Projects onlyFeatured/>
             <Contact />
         </div>
     )
