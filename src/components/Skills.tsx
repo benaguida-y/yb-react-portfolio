@@ -1,97 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CodeXml, Palette, Database, ToolCase, Settings, ChevronsLeftRightEllipsis, FolderCode, MonitorCog } from "lucide-react";
-
-const Skills = () => {
-    const skillCategories = [
-        {
-            icon: CodeXml,
-            title: 'Frontend Development',
-            skills: [
-                'React.js',
-                'TypeScript',
-                'JavaScript',
-                'Tailwind CSS',
-                'Bootstrap'
-            ],
-            color: 'text-blue-500'
-        },
-        {
-            icon: Settings,
-            title: 'Backend Development',
-            skills: [
-                'Node.js',
-                'Express.js',
-                'PHP',
-                'Java EE'
-            ],
-            color: 'text-green-500'
-        },
-        {
-            icon: FolderCode,
-            title: 'Full-Stack Frameworks',
-            skills: [
-                'Next.js'
-            ],
-            color: 'text-indigo-500'
-        },
-        {
-            icon: Database,
-            title: 'Database',
-            skills: [
-                'Oracle',
-                'PostgreSQL',
-                'MySQL'
-            ],
-            color: 'text-emerald-500'
-        },
-        {
-            icon: ChevronsLeftRightEllipsis,
-            title: 'CMS & Web Platforms',
-            skills: [
-                'WordPress'
-            ],
-            color: 'text-cyan-500'
-        },
-        {
-            icon: MonitorCog,
-            title: 'Software Development',
-            skills: [
-                'Java',
-                'JavaFX',
-                'Python',
-                'C'
-            ],
-            color: 'text-purple-500'
-        },
-        {
-            icon: Palette,
-            title: 'UI/UX & Design',
-            skills: [
-                'Figma',
-                'Adobe XD',
-                'Photoshop',
-                'Illustrator',
-                'After Effects',
-                'Canva'
-            ],
-            color: 'text-pink-500'
-        },
-        {
-            icon: ToolCase,
-            title: 'Tools & Workflow',
-            skills: [
-                'Git',
-                'GitHub',
-                'VS Code',
-                'Microsoft Teams'
-            ],
-            color: 'text-yellow-500'
-        }
-    ];
+import {skillCategories} from '@/lib/skills';
 
 
-
+const Skills = () => { 
     return (
         <section id="skills" className="py-20 border-t bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat">
             <div className="container mx-auto px-6">
@@ -118,7 +30,7 @@ const Skills = () => {
                                     </div>
 
                                     <div className="flex flex-wrap gap-2">
-                                        {category.skills.map((skill, skillIndex) => (
+                                        {category.skill.map((skill, skillIndex) => (
                                             <Badge
                                                 key={skillIndex}
                                                 variant="outline"

@@ -1,11 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from './ui/button';
-import { useNavigate } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { FileUser } from 'lucide-react';
 
 const About = () => {
-    const navigate = useNavigate();
+    
 
     return (
         <section id="about" className="py-20 bg-secondary/30 bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat">
@@ -41,10 +41,12 @@ const About = () => {
                             <Badge variant="secondary" className="bg-gray-200 text-sm">Effective Communication</Badge>
                             <Badge variant="secondary" className="bg-gray-200 text-sm">Critical Thinking</Badge>
                         </div>
-                        <Button className=" cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-sm" onClick={() => navigate("/about-fr")}>
-                            Find Out More
-                            <FileUser />
-                        </Button>
+                        <NavLink to="/about-fr">
+                            <Button className=" cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-sm">
+                                Find Out More
+                                <FileUser />
+                            </Button>
+                        </NavLink>
                     </div>
 
                     <div className="space-y-6">
@@ -72,7 +74,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
