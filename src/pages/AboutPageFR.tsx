@@ -1,11 +1,14 @@
 import { Globe, Linkedin, Mail, MapPin, Phone, SquareArrowOutUpRight } from "lucide-react";
-import logo from "../assets/logo.png";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { cvExperiences } from "@/lib/cvExperience";
+import logo from "../assets/logo.png";
+
 
 
 const AboutPageFR = () => {
+    const lang = "fr"
     return (
         <div className="bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat min-h-screen pt-26 pb-14">
             <div className="flex justify-center items-center mb-4">
@@ -173,15 +176,22 @@ const AboutPageFR = () => {
                             <AccordionItem value="item-2">
                                 <AccordionTrigger className="text-2xl font-bold text-[#163853]"><span className="border-b-3 border-[#1e293b]">EXPÉRIENCE</span> </AccordionTrigger>
                                 <AccordionContent>
-                                    <div className="pb-6 border-l-2 border-[#163853]">
-                                        <h1 className="text-l font-bold"><span className="text-[#163853]">•</span> Stage – Circet Maroc</h1>
-                                        <p className="pl-4 text-muted-foreground italic font-light">Casablanca, MA — Août 2025 — Septembre 2025 </p>
-                                        <p className="pl-6 font-light">• Configuration et maintenance des tableaux de bord Zabbix pour surveiller les serveurs et périphériques réseau.</p>
-                                        <p className="pl-6 font-light">• Mise en place et ajustement des règles d’alerte pour détecter les pannes et problèmes de performance en temps réel.</p>
-                                        <p className="pl-6 font-light">• Utilisation de Nessus pour effectuer des scans de vulnérabilités et évaluer les risques de sécurité sur l’infrastructure.</p>
-                                        <p className="pl-6 font-light">• Collaboration avec l’équipe informatique pour résoudre les incidents et appliquer des correctifs selon les résultats Zabbix/Nessus.</p>
-                                        <p className="pl-6 font-light">• Acquisition d’expérience pratique en surveillance réseau, gestion des vulnérabilités et opérations informatiques.</p>
-                                    </div>
+                                    {cvExperiences.map((exp, index) => (
+                                        <div key={index} className="pb-6 border-l-2 border-[#163853]">
+                                            <h1 className="text-l font-bold">
+                                                <span className="text-[#163853]">•</span>{" "}
+                                                {exp.role[lang]} – {exp.company}
+                                            </h1>
+
+                                            <p className="pl-4 text-muted-foreground italic font-light">
+                                                {exp.location} — {exp.period[lang]}
+                                            </p>
+
+                                            {exp.responsibilities[lang].map((item, i) => (
+                                                <p className="pl-6 font-light" key={i}>• {item}</p>
+                                            ))}
+                                        </div>
+                                    ))}
                                 </AccordionContent>
                             </AccordionItem>
 

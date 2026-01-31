@@ -104,21 +104,21 @@ const NavBar = ({ fixed = false }: NavBarProps) => {
                             Home
                         </NavLink>
                         <NavLink
-                            to="/about-detailed"
+                            to="/about-fr"
                             className={({ isActive }) => getNavLinkClass(isActive)}
                             onClick={() => setMenuOpen(false)}
                         >
                             About
                         </NavLink>
                         <NavLink
-                            to="/skills-detailed"
+                            to="/skills"
                             className={({ isActive }) => getNavLinkClass(isActive)}
                             onClick={() => setMenuOpen(false)}
                         >
                             Skills
                         </NavLink>
                         <NavLink
-                            to="/projects-detailed"
+                            to="/projects"
                             className={({ isActive }) => getNavLinkClass(isActive)}
                             onClick={() => setMenuOpen(false)}
                         >

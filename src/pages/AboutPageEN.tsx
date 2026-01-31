@@ -1,13 +1,14 @@
-import { ExternalLink, Globe, Linkedin, Mail, MapPin, Phone, SquareArrowOutUpRight } from "lucide-react";
-import logo from "../assets/logo.png";
-import {
-    Accordion, AccordionContent, AccordionItem, AccordionTrigger
-} from "@/components/ui/accordion"
+import { Globe, Linkedin, Mail, MapPin, Phone, SquareArrowOutUpRight } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
+import { cvExperiences } from "@/lib/cvExperience";
+import logo from "../assets/logo.png";
 
 
 const AboutPageEN = () => {
+    const lang = "en"
+
     return (
         <div className="bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat min-h-screen pt-26 pb-14">
             <div className="flex justify-center items-center mb-4">
@@ -175,15 +176,22 @@ const AboutPageEN = () => {
                             <AccordionItem value="item-2">
                                 <AccordionTrigger className="text-2xl font-bold text-[#163853]"><span className="border-b-3 border-[#1e293b]">EXPERIENCE</span> </AccordionTrigger>
                                 <AccordionContent>
-                                    <div className="pb-6 border-l-2 border-[#163853]">
-                                        <h1 className="text-l font-bold"><span className="text-[#163853]">•</span> Internship – Circet Maroc</h1>
-                                        <p className="pl-4 text-muted-foreground italic font-light">Casablanca, MA — August 2025 — September 2025 </p>
-                                        <p className="pl-6 font-light">• Configured and maintained Zabbix dashboards to monitor servers and network devices.</p>
-                                        <p className="pl-6 font-light">• Implemented and fine-tuned alerting rules to detect outages and performance issues in real time.</p>
-                                        <p className="pl-6 font-light">• Used Nessus to perform vulnerability scans and assess security risks across infrastructure.</p>
-                                        <p className="pl-6 font-light">• Collaborated with the IT team to troubleshoot incidents and apply remediation based on Zabbix/Nessus findings.</p>
-                                        <p className="pl-6 font-light">• Gained hands-on experience in network monitoring, vulnerability management, and IT operations.</p>
-                                    </div>
+                                    {cvExperiences.map((exp, index) => (
+                                        <div key={index} className="pb-6 border-l-2 border-[#163853]">
+                                            <h1 className="text-l font-bold">
+                                                <span className="text-[#163853]">•</span>{" "}
+                                                {exp.role[lang]} – {exp.company}
+                                            </h1>
+
+                                            <p className="pl-4 text-muted-foreground italic font-light">
+                                                {exp.location} — {exp.period[lang]}
+                                            </p>
+
+                                            {exp.responsibilities[lang].map((item, i) => (
+                                                <p className="pl-6 font-light" key={i}>• {item}</p>
+                                            ))}
+                                        </div>
+                                    ))}
                                 </AccordionContent>
                             </AccordionItem>
 
