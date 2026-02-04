@@ -41,7 +41,7 @@ const AboutPageEN = () => {
                     <div className="flex justify-center py-12 w-auto mb-1">
                         <img
                             // src={logo}
-                            alt="YB Logo"
+                            alt="Photo"
                             className="h-36 w-36 border"
                         />
                     </div>
