@@ -10,8 +10,8 @@ import { cvSummaries } from "@/lib/cvSummary";
 import { cvContacts } from "@/lib/cvContact";
 import { cvLanguages } from "@/lib/cvLanguage";
 import { cvSkills } from "@/lib/cvSkill";
-import logo from "../assets/logo.png";
 import { cvInterests } from "@/lib/cvInterest";
+// import logo from "../assets/logo.png";
 
 
 
