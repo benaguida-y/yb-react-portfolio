@@ -1,4 +1,3 @@
-// src/lib/cvExperience.ts
 export type CVExperience = {
   role: {
     en: string
