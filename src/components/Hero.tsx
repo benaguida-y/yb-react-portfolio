@@ -1,14 +1,14 @@
 import { Button } from "./ui/button";
 import SocialLinks from "./SocialLinks";
 import { FolderGit2, MessageCircle } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 interface HeroProps {
     title?: string;
     subtitle?: string;
     btnText1?: string;
     btnText2?: string;
-    onBtn1Click?: () => void;
-    onBtn2Click?: () => void;
     backgroundImage?: string;
 }
 
@@ -17,8 +17,6 @@ const Hero: React.FC<HeroProps> = ({
     subtitle = "",
     btnText1 = "",
     btnText2 = "",
-    onBtn1Click,
-    onBtn2Click,
     backgroundImage
 }) => {
 
@@ -41,21 +39,30 @@ const Hero: React.FC<HeroProps> = ({
                     <SocialLinks />
                 </div>
                 <div className="flex justify-center gap-6 pt-8">
-                    <Button
-                        onClick={onBtn1Click}
-                        className="cursor-pointer bg-white text-[#0f1720] border border-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0f1720] hover:text-white transition-colors duration-300"
-                    >
-                        {btnText1}
-                        <MessageCircle />
-                    </Button>
-
-                    <Button
-                        onClick={onBtn2Click}
-                        className="cursor-pointer bg-[#0f1720] text-white border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0f1720] transition-colors duration-300"
-                    >
-                        {btnText2}
-                        <FolderGit2 />
-                    </Button>
+                    {/* <NavLink to="#contact">
+                        <Button
+                            className="text-md cursor-pointer bg-white text-[#0f1720] border border-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0f1720] hover:text-white transition-colors duration-300"
+                        >
+                            {btnText1}
+                            <MessageCircle />
+                        </Button>
+                    </NavLink> */}
+                    <div className="hidden md:flex justify-end">
+                        <HashLink smooth to="/#contact">
+                            <Button className="text-sm cursor-pointer bg-white text-[#0f1720] border border-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0f1720] hover:text-white transition-colors duration-300">
+                                {btnText1}
+                                <MessageCircle />
+                            </Button>
+                        </HashLink>
+                    </div>
+                    <NavLink to="/projects">
+                        <Button
+                            className="text-sm cursor-pointer bg-[#0f1720] text-white border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0f1720] transition-colors duration-300"
+                        >
+                            {btnText2}
+                            <FolderGit2 />
+                        </Button>
+                    </NavLink>
                 </div>
             </div>
         </section>

@@ -1,9 +1,12 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import {skillCategories} from '@/lib/skills';
+import { skillCategories } from '@/lib/skills';
+import { NavLink } from 'react-router-dom';
+import { Button } from './ui/button';
+import { FileUser } from 'lucide-react';
 
 
-const Skills = () => { 
+const Skills = () => {
     return (
         <section id="skills" className="py-20 border-t bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat">
             <div className="container mx-auto px-6">
@@ -20,7 +23,7 @@ const Skills = () => {
                     {skillCategories.map((category, index) => {
                         const IconComponent = category.icon;
                         return (
-                            <Card key={index} className="p-6 shadow-card hover:shadow-[#0f1720] transition-shadow duration-500 group">
+                            <Card key={index} className="p-6 hover:shadow-2xl transition-shadow duration-500 group">
                                 <CardContent className="p-0">
                                     <div className="flex items-center mb-4">
                                         <div className={`p-3  rounded-lg border mr-4 group-hover:scale-110 transition-transform`}>
@@ -44,6 +47,14 @@ const Skills = () => {
                             </Card>
                         );
                     })}
+                </div>
+                <div className='flex justify-center'>
+                    <NavLink to="/about-fr">
+                        <Button size="sm" className="mt-10  cursor-pointer bg-[#1e293b] hover:bg-white hover:text-[#1e293b] border  transition-opacity text-sm">
+                            Find Out More
+                            <FileUser />
+                        </Button>
+                    </NavLink>
                 </div>
             </div>
         </section>

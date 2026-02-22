@@ -43,6 +43,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
+import ProjectDetails from './pages/ProjectDetails';
 
 function AppContent() {
     const location = useLocation();
@@ -64,10 +65,8 @@ function AppContent() {
                     <Route path="/about-en" element={<AboutPageEN />} />
                     <Route path="/skills" element={<SkillsPage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
-                    {/* <Route path="/project_vehicle_rental_management_system_desktop" element={<ProjectsPage1 />} /> */}
-                    {/* <Route path="/project_smart_parking_rfid" element={<ProjectsPage2 />} /> */}
-                    {/* <Route path="/project_vehicle_rental_management_system_web" element={<ProjectsPage3 />} /> */}
-
+                    <Route path="/projects/:slug" element={<ProjectDetails />} />
+                    
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </div>

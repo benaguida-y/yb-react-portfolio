@@ -53,7 +53,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 border-t">
+        <section id="contact" className="py-20 border-t bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0f1720]">
@@ -166,10 +166,10 @@ const Contact = () => {
 
                                 <Button
                                     type="submit"
-                                    className="w-full cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-lg py-6"
+                                    className="w-full cursor-pointer border bg-[#1e293b] hover:bg-white hover:text-[#1e293b] transition-opacity text-lg py-6"
                                 >
                                     Send Message
-                                    <Send className="h-5 w-5 mr-2" />
+                                    <Send />
                                 </Button>
                             </form>
                         </CardContent>

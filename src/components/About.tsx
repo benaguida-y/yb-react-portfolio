@@ -1,11 +1,14 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from './ui/button';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FileUser } from 'lucide-react';
+import { cvSkills } from '@/lib/cvSkill';
+import { cvExperiences } from '@/lib/cvExperience';
+import { cvFormations } from '@/lib/cvFormation';
 
 const About = () => {
-    
+    const lang = "en"
 
     return (
         <section id="about" className="py-20 bg-secondary/30 bg-[url('https://www.material-tailwind.com/logos/pattern-lines.png')] bg-cover bg-no-repeat">
@@ -34,15 +37,12 @@ const About = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-2 pt-4">
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Attention to Details</Badge>
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Teamwork</Badge>
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Problem Solver</Badge>
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Time Management</Badge>
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Effective Communication</Badge>
-                            <Badge variant="secondary" className="bg-gray-200 text-sm">Critical Thinking</Badge>
+                            {cvSkills.map((skill, index) => (
+                                <Badge key={index} variant="secondary" className="bg-gray-200 text-sm">{skill.name.en}</Badge>
+                            ))}
                         </div>
                         <NavLink to="/about-fr">
-                            <Button className=" cursor-pointer bg-[#0f1720] hover:bg-[#1e293b] hover:opacity-90 transition-opacity text-sm">
+                            <Button size="sm" className="w-full cursor-pointer bg-[#1e293b] hover:bg-white hover:text-[#1e293b] border  transition-opacity text-sm">
                                 Find Out More
                                 <FileUser />
                             </Button>
@@ -53,22 +53,39 @@ const About = () => {
                         <Card className="p-6 shadow-card">
                             <CardContent className="p-0">
                                 <h3 className="text-xl font-semibold mb-4">Experience</h3>
-                                <div className="space-y-4">
-                                    <div>
-                                        <h4 className="font-medium">IT Infrastructure & Security Internship</h4>
-                                        <p className="text-sm text-muted-foreground">Circet • Aug 2025 - Sep 2025</p>
+                                {cvExperiences.map((exp, index) => (
+                                    <div key={index} className="space-y-4">
+                                        <h4 className="font-medium m-0">
+                                            {exp.role[lang]} – {exp.company}
+                                        </h4>
+                                        <p className="text-sm text-muted-foreground">
+                                            {exp.location} — {exp.period[lang]}
+                                        </p>
                                     </div>
-                                </div>
+                                ))}
                             </CardContent>
                         </Card>
 
                         <Card className="p-6 shadow-card">
                             <CardContent className="p-0">
                                 <h3 className="text-xl font-semibold mb-4">Education</h3>
-                                <div>
+                                {/* <div>
                                     <h4 className="font-medium">Web Developement</h4>
                                     <p className="text-sm text-muted-foreground">SUPEMIR, Higher School of IT & Management • 2026</p>
-                                </div>
+                                </div> */}
+                                {cvFormations.map((exp, index) => (
+                                    <div key={index} className="space-y-4">
+                                        <h4 className="font-medium m-0">
+                                            {exp.title.en}
+                                        </h4>
+                                        <p className="text-sm text-muted-foreground m-0">
+                                            {exp.institution.en}
+                                        </p>
+                                        <p className="text-sm text-muted-foreground mb-4">
+                                            {exp.period.en}
+                                        </p>
+                                    </div>
+                                ))}
                             </CardContent>
                         </Card>
                     </div>

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import SocialLinks from './SocialLinks';
 
@@ -14,13 +14,13 @@ const Footer = () => {
                     <div>
                         <div className="flex text-2xl font-bold text-white mb-8 gap-4 items-center">
                             <div className="shrink-0 flex items-center">
-                                <NavLink to="/">
+                                <a href="#home">
                                     <img
                                         src={logo}
                                         alt="YB Logo"
                                         className="h-10 w-auto border"
                                     />
-                                </NavLink>
+                                </a>
                             </div>
                             YB Dev
                         </div>
@@ -57,7 +57,7 @@ const Footer = () => {
 
                 <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-muted-foreground text-sm">
-                        © {currentYear} YB. All rights reserved.
+                        © {currentYear} YB Dev. All rights reserved.
                     </p>
                 </div>
             </div>

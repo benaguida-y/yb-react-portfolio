@@ -1,9 +1,13 @@
-import { Card, CardContent } from '@/components/ui/card';
+// import { Card, CardContent } from '@/components/ui/card';
+// import { Badge } from '@/components/ui/badge';
+// import { ExternalLink, FolderGit2, Github } from 'lucide-react';
+// import { CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, FolderGit2, Github } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { projects } from '@/lib/projects';
+import ProjectCard from './ProjectCard';
+import { FolderGit2 } from 'lucide-react';
+
 
 
 type ProjectsProps = {
@@ -31,16 +35,26 @@ const Projects = ({ onlyFeatured = false }: ProjectsProps) => {
                     </p>
                 </div>
 
+                {/* The commented on is replaced with this loop */}
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                    {displayProjects.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                        />
+                    ))}
+                </div>
+
+                {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
                     {displayProjects.map((project, index) => (
-                        <Card
+                        <ProjectCard
                             key={index}
-                            className="overflow-hidden shadow-card hover:shadow-[#0f1720] transition-shadow duration-500 group"
+                            className="overflow-hidden hover:shadow-2xl  group hover:scale-[1.02] transition-transform duration-300"
                         >
-                            {project.image && (
+                            {project.images && (
                                 <div className="relative overflow-hidden">
                                     <img
-                                        src={project.image}
+                                        src={project.images[0]}
                                         alt={project.title}
                                         className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-300"
                                     />
@@ -48,7 +62,7 @@ const Projects = ({ onlyFeatured = false }: ProjectsProps) => {
                             )}
 
                             <CardContent className="p-6">
-                                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                                <h3 className="text-xl font-bold mb-3 text-[#1e293b]">{project.title}</h3>
                                 <p className="text-muted-foreground mb-4 line-clamp-3">
                                     {project.shortDescription}
                                 </p>
@@ -60,13 +74,15 @@ const Projects = ({ onlyFeatured = false }: ProjectsProps) => {
                                         </Badge>
                                     ))}
                                 </div>
+                            </CardContent>
 
+                            <CardFooter>
                                 <div className="flex gap-3 mb-2">
                                     <a href={project.githubUrl} target="_blank" className="w-full">
                                         <Button
                                             variant="outline"
                                             size="sm"
-                                            className="cursor-pointer w-full text-white bg-[#0f1720] hover:bg-[#1e293b]"
+                                            className="cursor-pointer w-full text-white bg-[#1e293b] hover:bg-white"
                                         >
                                             <Github className="h-4 w-4 mr-2" />
                                             Code
@@ -83,16 +99,17 @@ const Projects = ({ onlyFeatured = false }: ProjectsProps) => {
                                         Full Details
                                     </Button>
                                 </NavLink>
-                            </CardContent>
-                        </Card>
+                            </CardFooter>
+                        </ProjectCard>
                     ))}
-                </div>
+                </div> */}
 
                 {onlyFeatured && (
-                    <div className="text-center mt-12">
+                    <div className="text-center mt-12 ">
                         <NavLink to="/projects">
-                            <Button size="lg" className="bg-[#0f1720] text-white py-6 cursor-pointer">
-                                View All Projects <FolderGit2 />
+                            <Button size="sm" className="w-75 text-sm bg-[#1e293b] text-white cursor-pointer border hover:text-[#1e293b] hover:bg-white">
+                                View All Projects 
+                                <FolderGit2 />
                             </Button>
                         </NavLink>
                     </div>

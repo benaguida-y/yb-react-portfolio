@@ -88,7 +88,7 @@ const AboutPageEN = () => {
                                 </AccordionContent>
                             </AccordionItem>
 
-                            {/* Langauges */}
+                            {/* Languages */}
                             <AccordionItem value="item-2">
                                 <AccordionTrigger className="text-2xl font-bold text-white"><span className="border-b-3 border-white">LANGUAGES</span> </AccordionTrigger>
                                 <AccordionContent>
@@ -100,7 +100,7 @@ const AboutPageEN = () => {
                                 </AccordionContent>
                             </AccordionItem>
 
-                            {/* Technical Skills */}
+                            {/* Skills */}
                             <AccordionItem value="item-3">
                                 <AccordionTrigger className="text-2xl font-bold text-white"><span className="border-b-3 border-white">SKILLS</span> </AccordionTrigger>
                                 <AccordionContent>
